@@ -15,7 +15,7 @@ class JWTAuthMiddleware:
     def __call__(self, request):
         token = request.GET.get("jwt")
         if token:
-            logger.info("JWT token detected in the query parameters.")
+            logger.debug("JWT token detected in the query parameters.")
             try:
                 # Decode JWT token
                 payload = jwt.decode(
